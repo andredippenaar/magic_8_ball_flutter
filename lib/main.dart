@@ -25,7 +25,10 @@ class _BallState extends State<Ball> {
             ballNumber = Random().nextInt(5) + 1;
           });
         },
-        child: Image.asset('images/ball$ballNumber.png'),
+        child: Image.asset(
+          'images/ball$ballNumber.png',
+          gaplessPlayback: true,
+        ),
       ),
     );
   }
@@ -39,6 +42,7 @@ class BallPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
         title: Text('ASK ME ANYTHING'),
+        centerTitle: true,
       ),
       body: Ball(),
     );
